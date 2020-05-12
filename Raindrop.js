@@ -8,9 +8,14 @@ class Raindrop {
         }
         this.body = Bodies.circle(x, y, radius, options);
         this.radius = radius;
-        
         World.add(world, this.body);
       }
+
+      rainfall(){
+        rain.velocityY=8;
+        rain.y = rain.y+rain.velocityY;
+    }
+
       display(){
         var pos =this.body.position;
         var angle = this.body.angle;

@@ -9,17 +9,18 @@ function setup(){
     var canvas = createCanvas(400,400);
     engine = Engine.create();
     world = engine.world;
+
+    for(var i =0;i<500;i++) {
+        rain[i] = new Raindrop();
+        rainfall(); 
+    }
 }
 
 function draw(){
     background("white");
     Engine.update(engine);
 
-    for(var num = 25; num < 380; num=num+5) { 
-         rain = new Raindrop(num,num,10);
-         rain.velocityY= 5;  
-    }
-    
-    rain.display();
+   rain.display();
     drawSprites();
-};
+}
+
